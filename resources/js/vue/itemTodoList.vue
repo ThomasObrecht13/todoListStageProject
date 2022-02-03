@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <b-container>
 
         <!-- todos data  -->
         <b-row>
@@ -28,8 +28,7 @@
             </template>
         </b-modal>
 
-    </div>
-
+    </b-container>
 </template>
 <script>
 

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <b-container>
         <b-row id="list-tasks">
 
             <!-- Task data and checkbox for completed task -->
@@ -59,7 +59,7 @@
             </b-input-group>
 
         </b-modal>
-    </div>
+    </b-container>
 </template>
 <script>
 

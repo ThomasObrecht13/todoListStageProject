@@ -1,5 +1,5 @@
 <template xmlns="http://www.w3.org/1999/html">
-    <div>
+    <b-container>
         <!-- Add list form -->
         <b-form>
             <b-input-group class="mt-3">
@@ -18,7 +18,7 @@
             </b-input-group>
         </b-form>
 
-    </div>
+    </b-container>
 </template>
 <script>
 
@@ -52,8 +52,3 @@ export default {
     }
 }
 </script>
-<style>
-#inline-form-input-add{
-    margin-left: 10px;
-}
-</style>

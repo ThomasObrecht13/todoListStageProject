@@ -1,22 +1,22 @@
 <template>
-    <div class="container">
+    <b-container>
 
         <h1 id="title-app">TodoList</h1>
 
         <b-container fluid>
             <!-- list todos -->
             <div id="list-todo">
-                <list-todo-list :is_list="isList" :list_todo_list="todoLists" v-on:reloadList="getTodoList" v-on:changeList="changeList"></list-todo-list>
+                <list-todo-list :is_list="is_list" :list_todo_list="todo_lists" v-on:reloadList="getTodoList" v-on:changeList="changeList"></list-todo-list>
             </div>
 
             <!-- list tasks -->
             <div id="list-tasks" >
-                <list-task v-if="idListToShow" :todo_list_id="idListToShow"></list-task>
+                <list-task v-if="id_list_to_show" :todo_list_id="id_list_to_show"></list-task>
                 <h3 v-else id="title-none-tasks">Sélectionner une liste</h3>
             </div>
 
         </b-container>
-    </div>
+    </b-container>
 </template>
 
 <script>
@@ -29,21 +29,21 @@ export default {
     components: {ListTask, ListTodoList},
     data: function () {
         return{
-            idListToShow: null,
-            todoLists: [],
-            isList: false
+            id_list_to_show: null,
+            todo_lists: [],
+            is_list: false
         }
     },
     methods: {
         getTodoList() {
             axios.get('api/todoLists')
             .then( response => {
-                this.idListToShow = null
-                this.todoLists = response.data
-                if(this.todoLists.length > 0){
-                    this.isList = true
+                this.id_list_to_show = null
+                this.todo_lists = response.data
+                if(this.todo_lists.length > 0){
+                    this.is_list = true
                 }else{
-                    this.isList = false
+                    this.is_list = false
                 }
             })
             .catch(error =>{
@@ -51,7 +51,7 @@ export default {
             })
         },
         changeList(todo_list_id){
-            this.idListToShow = todo_list_id
+            this.id_list_to_show = todo_list_id
         }
     },
     created() {

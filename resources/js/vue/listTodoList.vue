@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <b-container>
         <h3>Vos listes</h3>
         <!-- add list component  -->
         <add-todo-list id="add-todo-list" v-on:reloadList="reloadList"></add-todo-list>
@@ -11,9 +11,9 @@
             </div>
         </div>
 
-        <div v-else id="title-none-lists">Vous n'avez aucune liste</div>
+        <div v-else>Vous n'avez aucune liste</div>
 
-    </div>
+    </b-container>
 </template>
 <script>
 

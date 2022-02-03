@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <b-container>
         <!-- Add task form -->
         <b-form>
             <b-input-group class="mt-3">
@@ -18,7 +18,7 @@
             </b-input-group>
         </b-form>
 
-    </div>
+    </b-container>
 </template>
 <script>
 
